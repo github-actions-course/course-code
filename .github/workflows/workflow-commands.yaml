@@ -21,6 +21,6 @@ jobs:
           echo "Inside group"
           echo "::endgroup::"
       - name: Masking a value
-        run: "::add-mask::Secret String"
+        run: echo "::add-mask::Secret String"
       - name: Echo a secret
         run: Echo "Secret String"
