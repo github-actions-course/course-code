@@ -3,10 +3,13 @@ on: [push]
 
 jobs:
   node-matrix:
+    continue-on-error: false
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
         node-version: [14, 15, 16]
+      fail-fast: false
+      # max-parallel: 3
     runs-on: ${{ matrix.os }}
     steps:
       - run: node -v
