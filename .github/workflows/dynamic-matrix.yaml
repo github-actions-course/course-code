@@ -15,6 +15,12 @@ jobs:
   prepare-matrix:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/github-script@v6
+        id: matrix-arrays
+        with:
+          script: "return {os: context.payload.inputs['os'].split(','), 'node-version': context.payload.inputs['node-version'].split(',') }"
+          result-encoding: json
+      - run: echo '${{ steps.matrix-arrays.outputs.result }}'
       - run: echo "step-output=value" >> $GITHUB_OUTPUT
         id: step-1
       - run: echo "step-output=value 2" >> $GITHUB_OUTPUT
