@@ -6,9 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Simple JS Action
+      - name: Simple Docker Action
         id: greet
-        uses: ./.github/actions/hello
+        uses: ./.github/actions/hello-docker
         # uses: actions/hello-world-javascript-action@e76147da8e5c81eaf017dede5645551d4b94427b
         with:
           who_to_greet: Ali
