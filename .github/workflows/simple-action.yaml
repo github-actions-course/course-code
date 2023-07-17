@@ -6,12 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Send a joke on Slack
-        uses: ./.github/actions/slack-joke
-        id: slack-joke
+      - name: Send a Slack Message
+        uses: ./.github/actions/slack-php
         with:
-          slack_username: alialaa
-          upload_joke: true
           slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
-      - name: Displaying joke output
-        run: echo '${{ steps.slack-joke.outputs.joke }}'
+          message: Hello Slack
