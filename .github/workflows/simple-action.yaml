@@ -10,4 +10,4 @@ jobs:
         uses: ./.github/actions/slack-php
         with:
           slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
-          message: Hello Slac
+          message: Hello Slack
